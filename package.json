@@ -1,0 +1,22 @@
+{
+  "name": "5times",
+  "version": "1.0.0",
+  "description": "5 times to do list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilzhao/5times.git"
+  },
+  "author": "gil zhao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gilzhao/5times/issues"
+  },
+  "homepage": "https://github.com/gilzhao/5times#readme",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
