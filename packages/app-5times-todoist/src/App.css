@@ -63,8 +63,16 @@ h3 span {
 	font-weight: normal;
 }
 
+.times-wrap .info {
+	padding-top: 10px;
+}
+
+.times-wrap .info a {
+	color: #1890ff;
+}
+
 .times-wrap ol {
-	padding: 10px 10px 10px 20px;
+	padding:  10px 10px 20px 20px;
 	line-height: 2;
 	color: #777;
 }
