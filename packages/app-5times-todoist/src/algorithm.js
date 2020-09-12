@@ -1,8 +1,9 @@
 export const timesIntervalEnum = {
     1: 0,
-    2: 0,
-    3: 1,
-    4: 7
+    2: 1,
+    3: 4,
+    4: 7,
+    5: 14
 };
 
 export const algorithmData = {
@@ -25,6 +26,10 @@ export const algorithmData = {
     '2020-09-11': [{
         title: '合并两个有序链表',
         linkUrl: 'https://leetcode-cn.com/problems/merge-two-sorted-lists/',
+    }],
+    '2020-09-12': [{
+        title: '猜数字游戏',
+        linkUrl: 'https://leetcode-cn.com/problems/bulls-and-cows/'
     }]
 }
 

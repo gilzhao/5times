@@ -44,11 +44,16 @@ h3 {
 	position: relative;
 }
 
-h3 a {
+h3 .btn {
 	position: absolute;
-	right: 10px;
+	padding: 0 8px;
+	line-height: 18px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	right: 0;
 	font-size: 12px;
 	font-weight: normal;
+	background-color: #efefef;
 }
 
 h3 span {
@@ -87,19 +92,27 @@ a {
 }
 
 .algorithm-calendar-operating {
-	margin-bottom: 5px;
+	margin-bottom: 8px;
 	font-size: 12px;
 	text-align: right;
 }
 
 .algorithm-calendar-operating a {
 	display: inline-block;
-	margin-left: 10px;
+	margin-left: 5px;
+	padding: 0 8px;
+	line-height: 18px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	right: 10px;
+	font-size: 12px;
+	font-weight: normal;
+	background-color: #efefef;
 }
 
 .algorithm-calendar {
 	display: flex;
-	margin-bottom: 10px;
+	margin: 0 -2px 10px -2px;
 }
 
 .algorithm-calendar dl {
@@ -161,8 +174,12 @@ a {
 	color: #ccc
 }
 
-.algorithm-calendar .todo-list .t3 {
+.algorithm-calendar .todo-list .t2 {
 	opacity: .7;
+}
+
+.algorithm-calendar .todo-list .t3 {
+	opacity: .6;
 }
 
 .algorithm-calendar .todo-list .t4 {

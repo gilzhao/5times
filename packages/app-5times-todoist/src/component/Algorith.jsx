@@ -31,7 +31,7 @@ export default function Algorithm(props) {
 			{reviewList && reviewList.map((item, index) => {
 				if (item !== today && algorithmData[item] && algorithmData[item].length) {
 					return (
-						<div className={`list t${index >= 2 ? index + 1 : ''}`} key={index}>
+						<div className={`list t${index >= 1 ? index + 1 : ''}`} key={index}>
 							<h4>T:{index + 1}</h4>
 							<div>
 							{ algorithmData[item] && algorithmData[item].length ? (
