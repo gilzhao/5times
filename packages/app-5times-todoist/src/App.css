@@ -97,7 +97,7 @@ a {
 	text-align: right;
 }
 
-.algorithm-calendar-operating a {
+.algorithm-calendar-operating span {
 	display: inline-block;
 	margin-left: 5px;
 	padding: 0 8px;

@@ -8,7 +8,7 @@ export default function Algorithm(props) {
 	const intervalList = Object.values(timesIntervalEnum);
 	
 	const reviewList = intervalList.map(item => {
-		if (item === 0) return
+		if (item === 0) return null
 		return dayjs(day).subtract(item, 'day').format('YYYY-MM-DD')
 	})
 
@@ -19,8 +19,8 @@ export default function Algorithm(props) {
 				algorithmData[day] ? (
 						<>
 							{ algorithmData[day] && algorithmData[day].length ? (
-								algorithmData[day].map((aItem) => {
-									return <p><a href={aItem.linkUrl}>{aItem.title}</a></p>
+								algorithmData[day].map((aItem, index) => {
+									return <p key={index}><a href={aItem.linkUrl}>{aItem.title}</a></p>
 								})
 							) : null}
 						</>
@@ -35,14 +35,15 @@ export default function Algorithm(props) {
 							<h4>T:{index + 1}</h4>
 							<div>
 							{ algorithmData[item] && algorithmData[item].length ? (
-								algorithmData[item].map((aItem) => {
-									return <p><a href={aItem.linkUrl}>{aItem.title}</a></p>
+								algorithmData[item].map((aItem, index) => {
+									return <p key={index}><a href={aItem.linkUrl}>{aItem.title}</a></p>
 								})
 							) : null}
 							</div>
 						</div>
 					)
 				}
+				return null
 			})}
 		</div>
 	)

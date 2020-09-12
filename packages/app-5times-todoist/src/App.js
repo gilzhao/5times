@@ -48,10 +48,10 @@ function App() {
 							<span>({dayjs(showDay).format('ddd')})</span>
 						</>
 					)}
-					<a className="btn" onClick={() => {
+					<span className="btn" onClick={() => {
 						setShowDay(today)
 						setWeekList(getWeekList(today))
-					}}>reset</a>
+					}}>reset</span>
 				</h3>
 				<div className="todo-list-wrap">
 					<Algorithm day={showDay} today={today} />
