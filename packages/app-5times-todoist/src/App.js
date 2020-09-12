@@ -39,13 +39,13 @@ function App() {
 						<>
 							今日新题
 							<span>
-								{today} {dayjs(showDay).format('ddd')}
+								{today} ({dayjs(showDay).format('ddd')})
 							</span>
 						</>
 					) : (
 						<>
 							{showDay}
-							<span>{dayjs(showDay).format('ddd')}</span>
+							<span>({dayjs(showDay).format('ddd')})</span>
 						</>
 					)}
 					<a onClick={() => {
