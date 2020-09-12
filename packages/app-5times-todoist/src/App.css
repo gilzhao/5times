@@ -1,6 +1,7 @@
 .App {
 	font-size: 12px;
 	line-height: 20px;
+	color: #111;
 }
 
 .App-logo {
@@ -36,7 +37,25 @@
 }
 
 .times-wrap {
-	padding: 20px 10px;
+	padding: 10px;
+}
+
+h3 {
+	position: relative;
+}
+
+h3 a {
+	position: absolute;
+	right: 10px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+h3 span {
+	display: inline-block;
+	margin-left: 10px;
+	font-size: 12px;
+	font-weight: normal;
 }
 
 .times-wrap ol {
@@ -45,12 +64,31 @@
 	color: #777;
 }
 
+a {
+	color: #333;
+	text-decoration: none;
+}
+
 .todo-list {
+	min-height: 120px;
 	margin-bottom: 20px;
 	font-size: 14px;
 }
 
+.times-wrap h3 {
+	padding: 5px;
+}
+
+.todo-list-wrap .day, .todo-list-wrap .list {
+	padding: 10px;
+	margin-bottom: 10px;
+	background-color: #fffbe6;
+	border-radius: 5px;
+}
+
 .algorithm-calendar-operating {
+	margin-bottom: 5px;
+	font-size: 12px;
 	text-align: right;
 }
 
@@ -61,32 +99,72 @@
 
 .algorithm-calendar {
 	display: flex;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .algorithm-calendar dl {
 	flex: 1;
-	background-color: beige;
+	background-color: #bae7ff;
 	margin: 0 2px;
 	border-radius: 3px;
 	overflow: hidden;
+	color: #111;
+}
+
+.algorithm-calendar .todo-list {
+	margin-bottom: 10px;
 }
 
 .algorithm-calendar dt {
 	padding: 3px 0;
 	text-align: center;
-	background-color: bisque;
+	background-color: #096dd9;
+	line-height: 1.2;
+	color: #fff;
+}
+
+.algorithm-calendar dl.weekend dt {
+	background-color: #fa8c16;
+}
+
+.algorithm-calendar dl.weekend {
+	background-color: #ffe7ba;
+}
+
+.algorithm-calendar dd .day,
+.algorithm-calendar dd .list {
+	min-height: 50px;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 3px;
+	background-color: rgba(255, 255, 255, .8);
+	border: .5px solid #ccc;
 	line-height: 1.2;
 }
 
-.algorithm-calendar dt.weekend {
-	background-color: #61dafb;
+.algorithm-calendar dd .day a {
+	color: #096dd9;
+	font-weight: bold;
 }
 
-.algorithm-calendar dd {
-	padding: 5px;
+.algorithm-calendar dd .list h4 {
+	margin-bottom: 2px;
 }
+
 
 .algorithm-calendar .todo-list {
 	font-size: 12px;
+}
+
+.algorithm-calendar .todo-list .none {
+	text-align: center;
+	color: #ccc
+}
+
+.algorithm-calendar .todo-list .t3 {
+	opacity: .7;
+}
+
+.algorithm-calendar .todo-list .t4 {
+	opacity: .5;
 }

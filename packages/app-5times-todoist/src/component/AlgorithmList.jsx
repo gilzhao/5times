@@ -4,21 +4,7 @@ import dayjs from 'dayjs'
 import Algorithm from './Algorith'
 
 export default function AlgorithmList(props) {
-	const { today } = props
-	const [weekList, setWeekList] = useState(getWeekList(today))
-
-	function getWeekList(day) {
-		const getDay = dayjs(day).day()
-		const list = []
-		for (let i = 1; i <= 7; i++) {
-			if (getDay - i >= 0) {
-				list.push(dayjs(day).subtract(getDay - i, 'day').format('YYYY-MM-DD'))
-			} else {
-				list.push(dayjs(day).add(i - getDay, 'day').format('YYYY-MM-DD'))
-			}
-		}
-		return list
-	}
+	const { today, setShowDay, weekList, setWeekList, getWeekList } = props
 
 	return (
 		<>
@@ -45,8 +31,8 @@ export default function AlgorithmList(props) {
 			<div className="algorithm-calendar">
 				{weekList.map((item) => {
 					return (
-						<dl key={item}>
-							<dt className={(dayjs(item).day() == 6 || dayjs(item).day() == 0) ? 'weekend' : ''}>{dayjs(item).format('MM-DD')}<br/>({dayjs(item).format('dd')})</dt>
+						<dl key={item} className={(dayjs(item).day() == 6 || dayjs(item).day() == 0) ? 'weekend' : ''} onClick={() => setShowDay(item)}>
+							<dt>{dayjs(item).format('MM-DD')}<br/>({dayjs(item).format('dd')})</dt>
 							<dd>
 								<Algorithm today={today} day={item} />
 							</dd>

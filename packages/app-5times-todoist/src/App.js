@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import dayjs from 'dayjs';
-import logo from './logo.svg';
 import './App.css';
 import { algorithmData } from './algorithm';
 import AlgorithmList from './component/AlgorithmList';
@@ -8,18 +7,63 @@ import Algorithm from './component/Algorith';
 
 function App() {
 	const today = dayjs().subtract(0, 'day').format('YYYY-MM-DD');
+	const [showDay, setShowDay] = useState(today);
+	const [weekList, setWeekList] = useState(getWeekList(today));
+
+	function getWeekList(day) {
+		const getDay = dayjs(day).day();
+		const list = [];
+		for (let i = 1; i <= 7; i++) {
+			if (getDay - i >= 0) {
+				list.push(
+					dayjs(day)
+						.subtract(getDay - i, 'day')
+						.format('YYYY-MM-DD')
+				);
+			} else {
+				list.push(
+					dayjs(day)
+						.add(i - getDay, 'day')
+						.format('YYYY-MM-DD')
+				);
+			}
+		}
+		return list;
+	}
+
 	return (
 		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-			</header>
 			<div className="times-wrap">
 				<h3>
-					{today} {dayjs(today).format('ddd')}
+					{showDay === today ? (
+						<>
+							今日新题
+							<span>
+								{today} {dayjs(showDay).format('ddd')}
+							</span>
+						</>
+					) : (
+						<>
+							{showDay}
+							<span>{dayjs(showDay).format('ddd')}</span>
+						</>
+					)}
+					<a onClick={() => {
+						setShowDay(today)
+						setWeekList(getWeekList(today))
+					}}>返回今天</a>
 				</h3>
-				<h4>今日新题</h4>
-				<Algorithm day={today} today={today} />
-				<AlgorithmList data={algorithmData} today={today} />
+				<div className="todo-list-wrap">
+					<Algorithm day={showDay} today={today} />
+				</div>
+				<AlgorithmList
+					data={algorithmData}
+					today={today}
+					setShowDay={setShowDay}
+					weekList={weekList}
+					setWeekList={setWeekList}
+					getWeekList={getWeekList}
+				/>
 				<ol>
 					<li>
 						读题 + 思考 （如果基础薄弱 可以给自己10分钟 最多15分钟）这里不能略过 有思路 直接做 直接写 ||

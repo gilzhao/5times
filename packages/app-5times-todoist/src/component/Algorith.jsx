@@ -14,25 +14,25 @@ export default function Algorithm(props) {
 
 	return (
 		<div className="todo-list">
+			<div className="day">
 			{
 				algorithmData[day] ? (
-					<div className="day">
-						<div>
+						<>
 							{ algorithmData[day] && algorithmData[day].length ? (
 								algorithmData[day].map((aItem) => {
 									return <p><a href={aItem.linkUrl}>{aItem.title}</a></p>
 								})
 							) : null}
-						</div>
-					</div>
-				) : '-'
+						</>
+				) : <div className="none">-</div>
 			}
+			</div>
 
 			{reviewList && reviewList.map((item, index) => {
 				if (item !== today && algorithmData[item] && algorithmData[item].length) {
 					return (
-						<div className="list" key={index}>
-							<h4>第{index + 1}次</h4>
+						<div className={`list t${index >= 2 ? index + 1 : ''}`} key={index}>
+							<h4>T:{index + 1}</h4>
 							<div>
 							{ algorithmData[item] && algorithmData[item].length ? (
 								algorithmData[item].map((aItem) => {
