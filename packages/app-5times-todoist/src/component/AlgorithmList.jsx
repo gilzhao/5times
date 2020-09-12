@@ -13,12 +13,12 @@ export default function AlgorithmList(props) {
 					list.pop()
 					list.unshift(dayjs(list[0]).subtract(1, 'day').format('YYYY-MM-DD'))
 					return [...list]
-				})}>前移一天</span>
+				})}>前一天</span>
 				<span onClick={() => setWeekList((list) => {
 					list.shift()
 					list.push(dayjs(list[list.length-1]).add(1, 'day').format('YYYY-MM-DD'))
 					return [...list]
-				})}>后移一天</span>
+				})}>后一天</span>
 				<span onClick={() => setWeekList((list) => {
 					list = getWeekList(dayjs(list[0]).subtract(2, 'day').format('YYYY-MM-DD'))
 					return [...list]
