@@ -13,21 +13,15 @@ function App() {
 	function getWeekList(day) {
 		const getDay = dayjs(day).day();
 		const list = [];
-		for (let i = 1; i <= 7; i++) {
-			if (getDay - i >= 0) {
-				list.push(
-					dayjs(day)
-						.subtract(getDay - i, 'day')
-						.format('YYYY-MM-DD')
-				);
-			} else {
-				list.push(
-					dayjs(day)
-						.add(i - getDay, 'day')
-						.format('YYYY-MM-DD')
-				);
-			}
+		for (let i = 0; i < 7; i++) {
+			list.push(
+				dayjs(day)
+					.add(i - getDay, 'day')
+					.format('YYYY-MM-DD')
+			);
+			
 		}
+
 		return list;
 	}
 

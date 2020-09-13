@@ -10,14 +10,16 @@ export default function AlgorithmList(props) {
 		<>
 			<div className="algorithm-calendar-operating">
 				<span onClick={() => setWeekList((list) => {
-					list.pop()
-					list.unshift(dayjs(list[0]).subtract(1, 'day').format('YYYY-MM-DD'))
-					return [...list]
+					const arr = list.concat()
+					arr.pop()
+					arr.unshift(dayjs(arr[0]).subtract(1, 'day').format('YYYY-MM-DD'))
+					return [...arr]
 				})}>前一天</span>
 				<span onClick={() => setWeekList((list) => {
-					list.shift()
-					list.push(dayjs(list[list.length-1]).add(1, 'day').format('YYYY-MM-DD'))
-					return [...list]
+					const arr = list.concat()
+					arr.shift()
+					arr.push(dayjs(arr[arr.length-1]).add(1, 'day').format('YYYY-MM-DD'))
+					return [...arr]
 				})}>后一天</span>
 				<span onClick={() => setWeekList((list) => {
 					list = getWeekList(dayjs(list[0]).subtract(2, 'day').format('YYYY-MM-DD'))
