@@ -7,7 +7,7 @@ cd packages/app-5times-todoist
 npm run start
 ```
 
-<img src="../public/app.jpg" width="200" />
+<img src="./public/5times.png" width="200" />
 
 手动添加算法题，或者需要做的强化练习。
 
