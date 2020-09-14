@@ -49,6 +49,20 @@ export const algorithmData = {
 			linkUrl: 'https://leetcode-cn.com/problems/design-circular-deque/',
 		},
 	],
+	'2020-09-14': [
+		{
+			title: '两个数组的交集 II',
+			linkUrl: 'https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/',
+		},
+		{
+			title: 'hashmaps',
+			linkUrl: 'https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/',
+		},
+		{
+			title: 'Map',
+			linkUrl: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map'
+		}
+	],
 };
 
 // TODO: 后续完善
