@@ -74,6 +74,12 @@ export const algorithmData = {
             linkUrl: 'https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/',
         },
     ],
+    '2020-09-16': [
+        {
+            title: '删除最外层的括号 1021_remove-outermost-parentheses',
+            linkUrl: 'https://leetcode-cn.com/problems/remove-outermost-parentheses/',
+        }
+    ],
 };
 
 // TODO: 后续完善
